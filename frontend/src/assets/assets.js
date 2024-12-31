@@ -1,5 +1,5 @@
 import basket_icon from './basket_icon.png'
-import logo from './logo.png'
+import logo from './logo-design.jpg'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 import menu_1 from './menu_1.png'
@@ -96,23 +96,23 @@ export const menu_list = [
         menu_image: menu_3
     },
     {
-        menu_name: "Sandwich",
+        menu_name: "valuga",
         menu_image: menu_4
     },
     {
-        menu_name: "Cake",
+        menu_name: "Murgam",
         menu_image: menu_5
     },
     {
-        menu_name: "Pure Veg",
+        menu_name: "Matta",
         menu_image: menu_6
     },
     {
-        menu_name: "Pasta",
+        menu_name: "NarJalla",
         menu_image: menu_7
     },
     {
-        menu_name: "Noodles",
+        menu_name: "Royya",
         menu_image: menu_8
     }]
 

@@ -3,6 +3,10 @@
     flex-direction: column;
     gap: 20px;
 }
+.both-flex{
+    display: flex;
+    justify-content: space-between;
+}
 .explore-menu h1{
     color: #262626;
     font-weight: 500;
@@ -13,12 +17,15 @@
 }
 .explore-menu-list{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    order: -1;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
     gap: 30px;
     text-align: center;
     margin: 20px 0px;
-    overflow-x: scroll;
+   overflow: auto;
+   
 }
 .explore-menu-list::-webkit-scrollbar{
     display: none;
@@ -29,6 +36,8 @@
     cursor: pointer;
     border-radius: 50%;
     transition: 0.2s;
+    border-radius: 50%;
+   border: 1px solid rgb(156, 90, 237);
 }
 .explore-menu-list-item .active{
     border: 4px solid tomato;
