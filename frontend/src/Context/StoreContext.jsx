@@ -5,7 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
-    const url = "https://online-delivery-backend.vercel.app"
+    const url = "https://delivery-backend-ioot.onrender.com"
     // const url = "http://localhost:4000"
 
     const [food_list, setFoodList] = useState([]);
