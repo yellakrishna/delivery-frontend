@@ -84,15 +84,15 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name: "Salad",
+        menu_name: "Boccha",
         menu_image: menu_1
     },
     {
-        menu_name: "Rolls",
+        menu_name: "Dhu Bocha",
         menu_image: menu_2
     },
     {
-        menu_name: "Deserts",
+        menu_name: "Rovu",
         menu_image: menu_3
     },
     {
