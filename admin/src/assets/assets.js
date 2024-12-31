@@ -14,4 +14,4 @@ export const assets ={
     parcel_icon
 }
 
-export const url = 'https://online-delivery-backend.vercel.app'
+export const url = 'https://delivery-backend-ioot.onrender.com'
