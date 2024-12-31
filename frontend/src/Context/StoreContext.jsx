@@ -8,7 +8,7 @@ const StoreContextProvider = (props) => {
     const url = "https://delivery-backend-ioot.onrender.com"
     // const url = "http://localhost:4000"
 
-    const [food_lists, setFoodList] = useState([]);
+    const [food_list, setFoodList] = useState([]);
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("")
 
