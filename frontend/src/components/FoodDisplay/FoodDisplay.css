@@ -23,9 +23,9 @@
     .food-display{
         margin-top: 30px;
         position: absolute;
-        right: 30px;
+        right: 10px;
         width: 35vh;
-       overflow-x: scroll;
+       overflow: auto;
        height: 160vh;
         
     }
