@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify/Verify'
 import ExploreMenu from './components/ExploreMenu/ExploreMenu'
+import Menu from './components/Menu'
 
 const App = () => {
 
@@ -24,7 +25,7 @@ const App = () => {
         <Navbar setShowLogin={setShowLogin}/>
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/menu' element={<ExploreMenu />}/>
+          <Route path='/menu' element={<Menu />}/>
           <Route path='/cart' element={<Cart />}/>
           <Route path='/order' element={<PlaceOrder />}/>
           <Route path='/myorders' element={<MyOrders />}/>

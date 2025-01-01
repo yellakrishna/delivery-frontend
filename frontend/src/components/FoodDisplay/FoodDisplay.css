@@ -1,9 +1,9 @@
 .food-display{
     margin-top: 30px;
-    position: absolute;
+    /* position: absolute;
     right: 35px;
     width: 140vh;
-    height: 160vh;
+    height: 160vh; */
    overflow: auto;
     
 }
@@ -23,11 +23,11 @@
 @media screen and (max-width:720px){
     .food-display{
         margin-top: 30px;
-        position: absolute;
+        /* position: absolute;
         right: 2px;
         width: 35vh;
        overflow: auto;
-       height: 100vh;
+       height: 100vh; */
         
     }
 }

@@ -18,7 +18,7 @@
 .explore-menu-list{
     display: flex;
     order: -1;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: start;
     gap: 30px;

@@ -3,10 +3,10 @@ import './FoodDisplay.css'
 import FoodItem from '../FoodItem/FoodItem'
 import { StoreContext } from '../../Context/StoreContext'
 
-const FoodDisplay = () => {
+const FoodDisplay = ({category}) => {
 
   const {food_list} = useContext(StoreContext);
-  const [category,setCategory] = useState("All")
+  // const [category,setCategory] = useState("All")
 
   return (
     <div className='food-display' id='food-display'>
