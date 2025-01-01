@@ -76,13 +76,13 @@ const PlaceOrder = () => {
                 <input type="email" name='email' onChange={onChangeHandler} value={data.email} placeholder='Email address' required />
                 <input type="text" name='street' onChange={onChangeHandler} value={data.street} placeholder='Street' required />
                 <div className="multi-field">
-                    <input type="text" name='city' onChange={onChangeHandler} value={data.city} placeholder='City' required />
+                    {/* <input type="text" name='city' onChange={onChangeHandler} value={data.city} placeholder='City' required /> */}
                     <input type="text" name='state' onChange={onChangeHandler} value={data.state} placeholder='State' required />
                 </div>
-                <div className="multi-field">
+                {/* <div className="multi-field">
                     <input type="text" name='zipcode' onChange={onChangeHandler} value={data.zipcode} placeholder='Zip code' required />
                     <input type="text" name='country' onChange={onChangeHandler} value={data.country} placeholder='Country' required />
-                </div>
+                </div> */}
                 <input type="text" name='phone' onChange={onChangeHandler} value={data.phone} placeholder='Phone' required />
             </div>
             <div className="place-order-right">
