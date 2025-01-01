@@ -55,7 +55,11 @@
     font-size: max(1vw,13px);
     border-radius: 10px;
     cursor: pointer;
+
     
+}
+.header-contents button:hover{
+    color: darkslategray;
 }
 @media (max-width:1050px) {
     .header{
