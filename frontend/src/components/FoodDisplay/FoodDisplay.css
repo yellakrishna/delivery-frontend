@@ -10,6 +10,7 @@
 .food-display h2{
     font-size: max(2vw,24px);
     font-weight: 600;
+    margin-right:30px;
 }
 .food-display-list{
     display: grid;
@@ -23,7 +24,7 @@
     .food-display{
         margin-top: 30px;
         position: absolute;
-        right: 10px;
+        right: 5px;
         width: 35vh;
        overflow: auto;
        height: 160vh;
