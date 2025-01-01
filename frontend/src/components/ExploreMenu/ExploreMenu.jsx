@@ -4,7 +4,7 @@ import { StoreContext } from '../../Context/StoreContext'
 import FoodDisplay from '../FoodDisplay/FoodDisplay'
 
 const ExploreMenu = () => {
-  const [category,setCategory] = useState("All")
+  const [category,setCategory] = useState("")
 
   const {menu_list} = useContext(StoreContext);
   
