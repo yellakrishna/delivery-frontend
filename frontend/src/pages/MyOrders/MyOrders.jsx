@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './MyOrders.css'
 import axios from 'axios'
-import { StoreContext } from '../../Context/StoreContext';
+import { StoreContext } from "../../Context/StoreContext.jsx"; // ✅ curly braces for named export
+
 import { assets } from '../../assets/assets';
 
 const MyOrders = () => {
@@ -9,10 +10,23 @@ const MyOrders = () => {
   const [data,setData] =  useState([]);
   const {url,token} = useContext(StoreContext);
 
-  const fetchOrders = async () => {
-    const response = await axios.post(url+"/api/order/userorders",{},{headers:{token}});
-    setData(response.data.data)
+ const fetchOrders = async () => {
+  try {
+    const response = await axios.post(
+      `${url}/api/order/userorders`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`, // ✅ Correct header format
+        },
+      }
+    );
+    setData(response.data.data);
+  } catch (err) {
+    console.error("❌ Failed to fetch orders:", err);
   }
+};
+
 
   useEffect(()=>{
     if (token) {

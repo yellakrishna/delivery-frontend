@@ -1,108 +1,151 @@
-.cart {
-    margin: 100px 0px;
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.cart hr {
-    height: 1px;
-    background-color: #E2E2E2;
-    border: none;
+/* Items container */
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.cart-items-title {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
-    align-items: center;
-    color: grey;
-    font-size: max(1vw, 12px);
+.cart-item-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+  position: relative;
 }
 
-.cart-items-item {
-    margin: 10px 0px;
-    color: black;
+.cart-item-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-.cart-items-item img {
-    width: 50px;
+.cart-item-details {
+  flex: 1;
+  margin-left: 12px;
 }
 
-.cart-items-item div {
-    max-width: 40px;
-    text-align: center;
-    border: 1px solid #EBEBEB;
-    padding: 8px 8px;
-    font-size: 12px;
-}
-.cart-items-remove-icon{
-    cursor: pointer;
-}
-.cart-bottom {
-    margin-top: 80px;
-    display: flex;
-    justify-content: space-between;
-    gap: max(12vw,20px);
+.cart-item-details h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
-.cart-total {
+.cart-item-details .price {
+  color: #ff4d30;
+  font-weight: 500;
+}
+
+.quantity {
+  font-size: 14px;
+  color: #444;
+}
+
+.item-total {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1d3557;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #d62828;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 8px;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #888;
+  padding: 40px 0;
+}
+
+/* Cart Summary */
+.cart-summary {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+}
+
+.cart-summary h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.summary-row.total {
+  font-size: 16px;
+}
+
+.checkout-btn {
+  margin-top: 16px;
+  background: linear-gradient(90deg, #ff4d30, #ff7e5f);
+  color: white;
+  font-weight: 500;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(255,77,48,0.3);
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .cart-page {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .cart-items-container {
+    flex: 2;
+  }
+
+  .cart-summary {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+  }
 
-.cart-total-details {
-    display: flex;
-    justify-content: space-between;
-    color: #555555;
-}
+  .cart-item-card {
+    gap: 16px;
+  }
 
-.cart-total hr {
-    margin: 10px 0px;
-}
+  .cart-item-image img {
+    width: 100px;
+    height: 100px;
+  }
 
-.cart-total button {
-    border: none;
-    color: white;
-    background-color: #FF4C24;
-    width: max(15vw,200px);
-    padding: 12px 0px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.cart-promocode {
-    flex: 1;
-}
-.cart-promocode p{
-    color: #555555;
-}
-.cart-promocode-input{
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #eaeaea;
-    border-radius: 4px;
-}
-.cart-promocode-input input{
-    background: transparent;
-    border: none;
-    outline: none;
-    padding-left: 10px;
-}
-.cart-promocode-input button{
-    width: max(10vw,150px);
-    padding: 12px 5px;
-    background-color: black;
-    border: none;
-    color: white;
-    border-radius: 4px;
-}
-
-@media(max-width:750px) {
-    .cart-bottom {
-        flex-direction: column-reverse;
-    }
-    .cart-promocode{
-        justify-content: start;
-    }
+  .cart-item-details h3 {
+    font-size: 18px;
+  }
 }
