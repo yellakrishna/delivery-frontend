@@ -5,7 +5,6 @@ import axios from 'axios';
 import { assets, url } from '../../assets/assets';
 
 const Order = () => {
-
   const [orders, setOrders] = useState([]);
 
   const fetchAllOrders = async () => {
@@ -19,18 +18,15 @@ const Order = () => {
     }
   }
 
-  const statusHandler = async (event,orderId) => {
-    console.log(event,orderId);
-    const response = await axios.post(`${url}/api/order/status`,{
+  const statusHandler = async (event, orderId) => {
+    const response = await axios.post(`${url}/api/order/status`, {
       orderId,
-      status:event.target.value
+      status: event.target.value
     })
-    if(response.data.success)
-    {
+    if (response.data.success) {
       await fetchAllOrders();
     }
   }
-
 
   useEffect(() => {
     fetchAllOrders();
@@ -45,25 +41,33 @@ const Order = () => {
             <img src={assets.parcel_icon} alt="" />
             <div>
               <p className='order-item-food'>
-                {order.items.map((item, index) => {
-                  if (index === order.items.length - 1) {
-                    return item.name + " x " + item.quantity
-                  }
-                  else {
-                    return item.name + " x " + item.quantity + ", "
-                  }
+                {order.items.map((item, i) => {
+                  return `${item.name} x ${item.quantity}${i !== order.items.length - 1 ? ', ' : ''}`
                 })}
-                </p>
-              <p className='order-item-name'>{order.address.firstName+" "+order.address.lastName}</p>
+              </p>
+
+              <p className='order-item-name'>
+                {order.address.firstName + " " + order.address.lastName}
+              </p>
+
               <div className='order-item-address'>
-                <p>{order.address.street+","}</p>
-                <p>{order.address.city+", "+order.address.state+", "+order.address.country+", "+order.address.zipcode}</p>
+                <p>{order.address.street + ","}</p>
+                <p>{order.address.city + ", " + order.address.state + ", " + order.address.country + ", " + order.address.zipcode}</p>
               </div>
+
               <p className='order-item-phone'>{order.address.phone}</p>
+
+              {/* ✅ Add payment details */}
+
+<p>Payment Mode: {order.paymentMode === "cod" ? "Cash on Delivery" : "Online"}</p>
+<p>Payment Status: {order.payment ? "Paid" : "Pending"}</p>
+
             </div>
+
             <p>Items : {order.items.length}</p>
-            <p>${order.amount}</p>
-            <select onChange={(e)=>statusHandler(e,order._id)} value={order.status} name="" id="">
+            <p>₹{order.amount}</p>
+
+            <select onChange={(e) => statusHandler(e, order._id)} value={order.status}>
               <option value="Food Processing">Food Processing</option>
               <option value="Out for delivery">Out for delivery</option>
               <option value="Delivered">Delivered</option>

@@ -1,9 +1,11 @@
-import React from 'react'
-import './Header.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import './Header.css';
+import { Link } from 'react-router-dom';
+import heroImage from '/361.jpg'; // ✅ Update to your image path
 
 const Header = () => {
     return (
+<<<<<<< HEAD
         <div className='header'>
             <div className='header-contents'>
                 <h2>Fish Online Servies <strong> Alampur Mandal</strong></h2>
@@ -13,5 +15,31 @@ const Header = () => {
         </div>
     )
 }
+=======
+        <header
+            className="hero"
+            style={{ backgroundImage: `url(${heroImage})` }}
+        >
+            {/* Overlay for dark effect */}
+            <div className="hero__overlay"></div>
+>>>>>>> 92660a4bd3bf4db442c375b2ca843960589fc51d
 
-export default Header
+            {/* Content */}
+            <div className="hero__content">
+                <h1 className="animated-gradient-title">
+                    Fresh Fish Delivery in{" "}
+                    <span className="highlight-gradient">Alampur</span>
+                </h1>
+                <p>
+                    Enjoy fresh, high-quality fish delivered straight to your door.  
+                    Healthy, delicious, and just a click away.
+                </p>
+                <Link to="/menu">
+                    <button className="hero__btn">View Menu</button>
+                </Link>
+            </div>
+        </header>
+    );
+};
+
+export default Header;
