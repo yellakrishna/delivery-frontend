@@ -5,10 +5,10 @@ import { StoreContext } from "../../Context/StoreContext.jsx";
 import { Link, useNavigate } from 'react-router-dom';
 
 const FoodItem = ({ image, name, id }) => {
-  const { url, token } = useContext(StoreContext);
+  const { token } = useContext(StoreContext);
   const navigate = useNavigate();
 
-  // ✅ If user not logged in, redirect to login when clicking item
+  // ✅ Redirect to login if user not logged in
   const handleClick = (e) => {
     if (!token) {
       e.preventDefault();
@@ -16,7 +16,7 @@ const FoodItem = ({ image, name, id }) => {
     }
   };
 
-  // ✅ Check if item details are missing
+  // ✅ Check for missing details
   if (!id || !image || !name) {
     return (
       <div className="food-item error">
@@ -35,7 +35,7 @@ const FoodItem = ({ image, name, id }) => {
         <div className="food-item-img-container">
           <img
             className="food-item-image"
-            src={`${url}/images/${image}`}
+            src={image} // ✅ Use Cloudinary URL directly
             alt={`Image of ${name}`}
             onError={(e) => (e.target.src = assets.fallback_image)}
           />

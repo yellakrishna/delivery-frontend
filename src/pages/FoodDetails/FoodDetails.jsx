@@ -6,7 +6,7 @@ import './FoodDetails.css';
 const FoodDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { food_list = [], addToCart, removeFromCart, cartItems = {}, url } = useContext(StoreContext);
+  const { food_list = [], addToCart, removeFromCart, cartItems = {} } = useContext(StoreContext);
 
   const foodItem = food_list.find(item => item._id === id);
   if (!foodItem) return <div className="food-details-error">⚠️ Food item not found!</div>;
@@ -21,7 +21,7 @@ const FoodDetails = () => {
       <div className="food-details-wrapper">
         {/* Image */}
         <div className="food-image-container">
-          <img src={`${url}/images/${foodItem.image}`} alt={foodItem.name} />
+          <img src={foodItem.image} alt={foodItem.name} /> {/* ✅ Direct Cloudinary URL */}
         </div>
 
         {/* Info */}
