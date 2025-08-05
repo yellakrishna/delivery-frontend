@@ -21,7 +21,8 @@ const FoodDetails = () => {
       <div className="food-details-wrapper">
         {/* Image */}
         <div className="food-image-container">
-          <img src={foodItem.image} alt={foodItem.name} /> {/* ✅ Direct Cloudinary URL */}
+         <img src={`${url}/images/${foodItem.image}`} alt={foodItem.name} />
+
         </div>
 
         {/* Info */}
